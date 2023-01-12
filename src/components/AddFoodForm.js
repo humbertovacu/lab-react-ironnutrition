@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function AddFoodForm(props){
     
-    const { foodList, updateFood } = props;
+    const { foodList, updateFood, updateOriginal, originalArray } = props;
     const [ name, setName ] = useState('');
     const [ image, setImage ] = useState('');
     const [ calories, setCalories ] = useState('');
@@ -14,10 +14,8 @@ function AddFoodForm(props){
     const toggleForm = (e) => {
         e.preventDefault();
         const updatedList = [...foodList, newFood];
-        console.log(updatedList);
         updateFood(updatedList);
-        console.log(foodList)
-        console.log(newFood)
+        updateOriginal([...originalArray, newFood]);
         setName('');
         setImage('');
         setCalories('');
