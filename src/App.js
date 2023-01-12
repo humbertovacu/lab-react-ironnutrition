@@ -2,19 +2,20 @@ import './App.css';
 import { useState } from "react";
 import foods from './foods.json';
 import FoodBox from './components/FoodBox';
-
+import AddFoodForm from './components/AddFoodForm';
 
 function App() {
-const [ foodList, updateFood ] = useState(foods)
-
+ 
+  const [ foodList, updateFood ] = useState(foods);
 
   return (
     <div className="App">
+     <AddFoodForm foodList={foodList} updateFood={updateFood}/>
       <h1>Food List</h1>
       {foodList.map(item => {
         return(
         <div>
-          <FoodBox food={item}/>
+          <FoodBox key={item.name} food={item}/>
         </div>)
       })}
     </div>
