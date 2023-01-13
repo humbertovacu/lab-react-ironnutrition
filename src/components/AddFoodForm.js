@@ -8,7 +8,7 @@ function AddFoodForm(props){
     const [ image, setImage ] = useState('');
     const [ calories, setCalories ] = useState('');
     const [ servings, setServings ] = useState('');
-    const newFood = {name, image, calories, servings}
+    const newFood = {name, image, calories, servings};
 
 
     const toggleForm = (e) => {
